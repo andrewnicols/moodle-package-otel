@@ -1,0 +1,37 @@
+{
+    "name": "moodlehq/moodle-package-otel",
+    "description": "OpenTelemetry integration for Moodle LMS",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Moodlehq\\MoodlePackageOtel\\": "src/"
+        },
+        "files": [
+            "_register.php"
+        ]
+    },
+    "require": {
+        "nyholm/psr7": "*",
+        "ext-opentelemetry": "*",
+        "open-telemetry/opentelemetry-logger-monolog": "*",
+        "open-telemetry/api": "^1.1",
+        "open-telemetry/sdk": "^1.13",
+        "symfony/http-client": "^7.4"
+    },
+    "suggest": {
+        "open-telemetry/opentelemetry-auto-postgresql": "Auto-instrumentation for Postgresql"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2"
+    },
+    "scripts": {
+        "phpstan": "@php phpstan analyse"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": false,
+            "tbachert/spi": false
+        }
+    }
+}
